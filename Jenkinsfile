@@ -29,8 +29,8 @@ pipeline {
 			 nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				 iqApplication: 'IQ_app',
 				 iqScanPatterns: [[scanPattern: 'gameoflife-core.jar']], 
-				 iqStage: 'release',
-				 jobCredentialsId: '54ad2bda-2ac3-4da8-b241-d4e08e15a662'
+				 iqStage: 'release', 
+				 jobCredentialsId: 'NexusIQCred'			     
      			}
      		}
 		stage( "Deploy" ){
