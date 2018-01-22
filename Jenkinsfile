@@ -28,7 +28,7 @@ pipeline {
 		     steps{
 			nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				iqApplication: 'IQ_app', 
-				iqScanPatterns: [[scanPattern:  'gameoflife-core/build/libs/*.jar']], 
+				iqScanPatterns: [[scanPattern:  'gameoflife-core/build/*.jar']], 
 				iqStage: 'release', 
 				jobCredentialsId: 'NexusIQCred'
 			     
