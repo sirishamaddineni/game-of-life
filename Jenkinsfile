@@ -26,11 +26,11 @@ pipeline {
 		}
 		stage( 'IQ_Scan' ){
 		     steps{
-			  nexusPolicyEvaluation failBuildOnNetworkError: false,
-					iqApplication: 'IQ_App',
-					iqScanPatterns: [[scanPattern: 'gameoflife-core.jar' ]],
-					iqStage: 'release',
-					jobCredentialsId: ''
+			 nexusPolicyEvaluation failBuildOnNetworkError: false, 
+				 iqApplication: 'IQ_app',
+				 iqScanPatterns: [[scanPattern: 'gameoflife-core.jar']], 
+				 iqStage: 'release',
+				 jobCredentialsId: '54ad2bda-2ac3-4da8-b241-d4e08e15a662'
      			}
      		}
 		stage( "Deploy" ){
