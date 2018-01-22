@@ -1,4 +1,9 @@
 pipeline {
+	agent any
+	options {
+		 disableConcurrentBuilds()
+           }
+	
 	 stages{
 		 stage ( 'clone' ){
 		    steps{
