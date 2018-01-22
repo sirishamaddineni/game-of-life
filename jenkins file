@@ -1,0 +1,18 @@
+Pipeline {
+stages {
+    stage ( 'compile' ){
+    steps{
+    withMaven( maven : 'maven_3_5_2' ){
+    bat 'mvn clean compile'
+    }
+    }
+    }
+    stage ('testing' ){
+    steps {
+     withMaven( maven : 'maven_3_5_2' ){
+     bat 'mvn test'
+     }
+     }
+     }
+     }
+    
