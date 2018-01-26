@@ -34,6 +34,12 @@ pipeline {
 			     
      			}
      		}
+		 stage ('push version back to Git (tag)' ) {
+			 git branch: "${master}", CredentialId: 'jenkins-user-key'
+                         sh('git tag -a "${master}_1.0.${BUILD_NUMBER}.0" -m "${master} Build Version #1.0.${BUILD_NUMBER}.0" ')
+                sh('git push origin --tags')
+		 }
+			 
 		stage( "Deploy" ){
 		      steps{
 				nexusArtifactUploader artifacts: [[artifactId: 'gameoflife-core', classifier: '', file: 'gameoflife-core/build/libs/gameoflife-core.jar', type: 'jar']],
