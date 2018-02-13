@@ -34,11 +34,13 @@ pipeline {
 			     
      			}
      		}
-		 stage ('push version back to Git (tag)' ) {
-			 git branch: "${master}", CredentialId: 'jenkins-user-key'
-                         bat ('git tag -a "${master}_1.0.${BUILD_NUMBER}.0" -m "${master} Build Version #1.0.${BUILD_NUMBER}.0" ')
-                bat ('git push origin --tags')
-		 }
+		stage ( "Tagging" ){                	  
+ 			steps {
+                         bat "git tag 'v31.1'"
+                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
+                         bat "git config user.name 'sirishamaddineni'"	
+			}
+		}
 			 
 		stage( "Deploy" ){
 		      steps{
