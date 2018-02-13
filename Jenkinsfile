@@ -24,23 +24,8 @@ pipeline {
 		       }
 		    }
 		}
-		 stage ( 'coverage' ){
-			 steps{
-				 cobertura autoUpdateHealth: false,
-					 autoUpdateStability: false, 
-					 conditionalCoverageTargets: '70, 0, 0',
-					 failUnhealthy: false, 
-					 failUnstable: false, 
-					 lineCoverageTargets: '80, 0, 0', 
-					 maxNumberOfBuilds: 0, 
-					 methodCoverageTargets: '80, 0, 0', 
-					 onlyStable: false, 
-					 sourceEncoding: 'ASCII', 
-					 zoomCoverageChart: false
-			 }
-		 }
-
-		stage( 'IQ_Scan' ){
+		 
+		 stage( 'IQ_Scan' ){
 		     steps{
 			nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				iqApplication: 'GOL_App', 
@@ -52,7 +37,7 @@ pipeline {
      		}
 		stage ( "Tagging" ){                	  
  			steps {
-                         bat "git tag 'v31.5'"
+                         bat "git tag 'v31.4'"
                 	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
                          bat "git config user.name 'sirishamaddineni'"	
 			}
