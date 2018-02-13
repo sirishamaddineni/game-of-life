@@ -35,15 +35,8 @@ pipeline {
 			     
      			}
      		}
-		stage ( "Tagging" ){                	  
- 			steps {
-                         bat "git tag 'v31.6'"
-                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
-                         bat "git config user.name 'sirishamaddineni'"	
-			}
-		}
-			 
-		stage( "Deploy" ){
+					 
+		stage( "Deploy to Nexus" ){
 		      steps{
 				nexusArtifactUploader artifacts: [[artifactId: 'gameoflife-core', classifier: '', file: 'gameoflife-core/build/libs/gameoflife-core.jar', type: 'jar']],
 				credentialsId: '5aed14d0-99ce-4bd4-bbad-b6e3014c4e28', 
@@ -55,6 +48,13 @@ pipeline {
 				version: '3.0'
 			}
 		}
-    	   }
+    	       stage ( "Tagging" ){                	  
+ 		   steps {
+                         bat "git tag 'v31.7'"
+                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
+                         bat "git config user.name 'sirishamaddineni'"	
+			}
+		}
+	 }
      }
 
