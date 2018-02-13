@@ -28,7 +28,7 @@ pipeline {
 		     steps{
 			nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				iqApplication: 'GOL_App', 
-				iqScanPatterns: [[scanPattern:  'gameoflife-core/build/libs/gameoflife-core.jar']], 
+				iqScanPatterns: [[scanPattern:  '**/gameoflife-core.jar']], 
 				iqStage: 'release', 
 				jobCredentialsId: 'NexusIQCred'
 			     
@@ -36,7 +36,7 @@ pipeline {
      		}
 		stage ( "Tagging" ){                	  
  			steps {
-                         bat "git tag 'v31.4'"
+                         bat "git tag 'v31.5'"
                 	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
                          bat "git config user.name 'sirishamaddineni'"	
 			}
