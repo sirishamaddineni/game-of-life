@@ -29,7 +29,7 @@ pipeline {
 		     steps{
 			        nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				iqApplication: 'GOL_App', 
-				iqScanPatterns: [[scanPattern: '**/gameoflife-core/**' ]],
+				iqScanPatterns: [[scanPattern: '**/*.jar' ]],
 				iqStage: 'release', 
 				jobCredentialsId: 'NexusCred'			
      			}
