@@ -26,13 +26,13 @@ pipeline {
 		}
 		 
 		 stage( 'IQ_Scan' ){
-		     steps{
-			        nexusPolicyEvaluation failBuildOnNetworkError: false, 
-				iqApplication: 'GOL_App', 
-				iqScanPatterns: [[scanPattern: '**/*.jar' ]],
-				iqStage: 'release', 
-				jobCredentialsId: 'NexusCred'			
-     			}
+			 steps{
+                                nexusPolicyEvaluation failBuildOnNetworkError: false,
+				iqApplication: 'IQ_App',
+				iqScanPatterns: [[scanPattern: '**/.jar' ]],
+				iqStage: 'release',
+				jobCredentialsId: ''
+                     }
      		}
 					 
 		stage( "Deploy to Nexus" ){
