@@ -30,7 +30,6 @@ pipeline {
                                 nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: 'GOL_App',
 				iqScanPatterns: [[scanPattern: '**/*.jar' ]],
-				iqStage: 'release',
 				iqStage: 'build',
 				jobCredentialsId: ''
                      }
