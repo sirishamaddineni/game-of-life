@@ -29,7 +29,7 @@ pipeline {
 			 steps{
                                 nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: 'IQ_App',
-				iqScanPatterns: [[scanPattern: '**.jar' ]],
+				iqScanPatterns: [[scanPattern: '**/*.jar' ]],
 				iqStage: 'release',
 				jobCredentialsId: ''
                      }
@@ -49,7 +49,7 @@ pipeline {
 		}
 		 stage ( "Tagging" ){                	  
  		   steps {
-                         bat "git tag 'v31.10'"
+                         bat "git tag 'v31.11'"
                 	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
                          bat "git config user.name 'sirishamaddineni'"	
 			}
