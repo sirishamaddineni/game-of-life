@@ -31,6 +31,7 @@ pipeline {
 				iqApplication: 'GOL_App',
 				iqScanPatterns: [[scanPattern: '**/*.jar' ]],
 				iqStage: 'release',
+				iqStage: 'build',
 				jobCredentialsId: ''
                      }
      		}
@@ -49,7 +50,7 @@ pipeline {
 		}
 		 stage ( "Tagging" ){                	  
  		   steps {
-                         bat "git tag 'v31.12'"
+                         bat "git tag 'v31.13'"
                 	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
                          bat "git config user.name 'sirishamaddineni'"	
 			}
