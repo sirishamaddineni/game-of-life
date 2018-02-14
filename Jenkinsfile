@@ -47,14 +47,7 @@ pipeline {
 				repository: 'GameOfLife', 
 				version: '3.0'
 			}
-		}
-    	       stage ( "Tagging" ){                	  
- 		   steps {
-                         bat "git tag 'v31.7'"
-                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
-                         bat "git config user.name 'sirishamaddineni'"	
-			}
-		}
+		}    	       
 	 }
      }
 
