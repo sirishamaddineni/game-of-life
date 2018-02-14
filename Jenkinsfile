@@ -27,11 +27,11 @@ pipeline {
 		 
 		 stage( 'IQ_Scan' ){
 		     steps{
-			nexusPolicyEvaluation failBuildOnNetworkError: false, 
+			        nexusPolicyEvaluation failBuildOnNetworkError: false, 
 				iqApplication: 'GOL_App', 
 				iqScanPatterns: [[scanPattern: '**/gameoflife-core/**' ]],
 				iqStage: 'release', 
-				jobCredentialsId: ''			
+				jobCredentialsId: 'NexusCred'			
      			}
      		}
 					 
@@ -46,7 +46,14 @@ pipeline {
 				repository: 'GameOfLife', 
 				version: '3.0'
 			}
-		}    	       
+		}
+		 stage ( "Tagging" ){                	  
+ 		   steps {
+                         bat "git tag 'v31.8'"
+                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
+                         bat "git config user.name 'sirishamaddineni'"	
+			}
+		}
 	 }
      }
 
