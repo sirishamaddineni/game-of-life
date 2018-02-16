@@ -47,13 +47,7 @@ pipeline {
 				version: '3.0'
 			}
 		}
-		 stage ( "Tagging" ){                	  
- 		   steps {
-                         bat "git tag 'v31.14'"
-                	 bat "git config user.email 'sirishamaddineni25@gmail.com'"
-                         bat "git config user.name 'sirishamaddineni'"	
-			}
-		}
+		
 	 }
      }
 
