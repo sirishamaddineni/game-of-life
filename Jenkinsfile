@@ -49,7 +49,7 @@ pipeline {
 		}
 		 stage( "credentials"){
 			 steps{
-		withCredentials([usernamePassword(credentialsId: 'Sirisha', usernameVariable: 'Sirisha', passwordVariable: '9553902999')]) 
+		withCredentials([usernamePassword(credentialsId: 'sirishamaddineni', usernameVariable: 'Sirisha', passwordVariable: '9553902999')]) 
 	        {
 	             bat 'echo $PASSWORD'
                      echo USERNAME
