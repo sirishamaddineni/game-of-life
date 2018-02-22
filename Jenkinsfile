@@ -54,6 +54,7 @@ pipeline {
 	             bat 'echo $PASSWORD'
                      echo USERNAME
                      echo "username is $USERNAME"
+		}
             }
 	   }
 	 }
