@@ -47,7 +47,15 @@ pipeline {
 				version: '3.0'
 			}
 		}
-		
+		 stage( "credentials"){
+			 steps{
+		withCredentials([usernamePassword(credentialsId: 'Sirisha', usernameVariable: 'Sirisha', passwordVariable: '9553902999')]) 
+	        {
+	             bat 'echo $PASSWORD'
+                     echo USERNAME
+                     echo "username is $USERNAME"
+            }
+	   }
 	 }
      }
 
