@@ -25,7 +25,7 @@ pipeline {
 		    }
 		}
 		 
-		 stage( 'IQ_Scan' ){
+		 stage( 'IQ_Scan' ){ 
 			 steps{
                                 nexusPolicyEvaluation failBuildOnNetworkError: false,
 				iqApplication: 'GOL_App',
